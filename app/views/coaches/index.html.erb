@@ -7,7 +7,7 @@
       <div class="contents row">
         <% @coaches.each do |coach| %>
           <li class='list'>
-            <%= link_to coach_path(item) do %>
+            <%= link_to coach_path(coach) do %>
             <div class='coach-info'>
               <h3 class='coach-nickname'>
                 <%= coach.nickname %>
