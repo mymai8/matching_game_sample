@@ -1,5 +1,24 @@
 <div class="wrapper">
-  <%= render "header" %>
-  <%= render "side_bar" %>
-  <%= render "footer" %>
+  <%= render "shared/header" %>
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+    <div class="main">
+      <div class="contents row">
+        <% @coaches.each do |coach| %>
+          <li class='list'>
+            <%= link_to coach_path(item) do %>
+            <div class='coach-info'>
+              <h3 class='coach-nickname'>
+                <%= coach.nickname %>
+              </h3>
+              <div class='coach-price'>
+                <span><%= coach.price %>円</span>
+              </div>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  <%= render "shared/footer" %>
 </div>
