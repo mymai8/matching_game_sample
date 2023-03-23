@@ -1,0 +1,182 @@
+<div class="wrapper">
+  <%= render "shared/header" %>
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+    <div class="main">
+      <div class="coach-main">
+        <h2 class="coaches-title">ご自身の情報を入力してください</h2>
+        <%= form_with model: @coach, local: true do |f| %>
+
+        <%= render 'shared/error_messages', model: f.object %>
+
+        <%# コーチのランク %>
+        <div class="coach-rank">
+          <div class="weight-bold-text">
+            最高ランク
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:rank_id, Rank.all, :id, :name, {}, {class:"select-box", id:"highest-rank"}) %>
+        </div>
+        <%# コーチのランク %>
+
+        <%# キルレート %>
+        <div class="coach-kill-rate">
+          <div class="weight-bold-text">
+            キルレート
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :kill_rate, class:"kill-rate", id:"kill-rate", placeholder:"1.0" ,maxlength:"4" %>
+        </div>
+        <%# キルレート %>
+
+        <%# 使用キャラクター %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            使用キャラクター
+            <span class="indispensable">必須</span>
+          </div>
+          <form method="post" name="chk_ctl">
+            <div class="input-character">
+              <ul>
+                <li><input type="checkbox" id="box_1" value="1" onclick="click_cb();"><label for="box_1" class="checkbox">アッシュ</label></li>
+                <li><input type="checkbox" id="box_2" value="2" onclick="click_cb();"><label for="box_2" class="checkbox">オクタン</label></li>
+                <li><input type="checkbox" id="box_3" value="3" onclick="click_cb();"><label for="box_3" class="checkbox">カタリスト</label></li>
+                <li><input type="checkbox" id="box_4" value="4" onclick="click_cb();"><label for="box_4" class="checkbox">クリプト</label></li>
+                <li><input type="checkbox" id="box_5" value="5" onclick="click_cb();"><label for="box_5" class="checkbox">コースティック</label></li>
+                <li><input type="checkbox" id="box_6" value="6" onclick="click_cb();"><label for="box_6" class="checkbox">シア</label></li>
+                <li><input type="checkbox" id="box_7" value="7" onclick="click_cb();"><label for="box_7" class="checkbox">ジブラルタル</label></li>
+                <li><input type="checkbox" id="box_8" value="8" onclick="click_cb();"><label for="box_8" class="checkbox">ニューキャッスル</label></li>
+                <li><input type="checkbox" id="box_9" value="9" onclick="click_cb();"><label for="box_9" class="checkbox">バンガロール</label></li>
+                <li><input type="checkbox" id="box_10" value="10" onclick="click_cb();"><label for="box_10" class="checkbox">パスファインダー</label></li>
+                <li><input type="checkbox" id="box_11" value="11" onclick="click_cb();"><label for="box_11" class="checkbox">ヒューズ</label></li>
+                <li><input type="checkbox" id="box_12" value="12" onclick="click_cb();"><label for="box_12" class="checkbox">ブラッドハウンド</label></li>
+                <li><input type="checkbox" id="box_13" value="13" onclick="click_cb();"><label for="box_13" class="checkbox">ホライゾン</label></li>
+                <li><input type="checkbox" id="box_14" value="14" onclick="click_cb();"><label for="box_14" class="checkbox">マッドマギー</label></li>
+                <li><input type="checkbox" id="box_15" value="15" onclick="click_cb();"><label for="box_15" class="checkbox">ミラージュ</label></li>
+                <li><input type="checkbox" id="box_16" value="16" onclick="click_cb();"><label for="box_16" class="checkbox">ライフライン</label></li>
+                <li><input type="checkbox" id="box_17" value="17" onclick="click_cb();"><label for="box_17" class="checkbox">ランパート</label></li>
+                <li><input type="checkbox" id="box_18" value="18" onclick="click_cb();"><label for="box_18" class="checkbox">レイス</label></li>
+                <li><input type="checkbox" id="box_19" value="19" onclick="click_cb();"><label for="box_19" class="checkbox">レヴナント</label></li>
+                <li><input type="checkbox" id="box_20" value="20" onclick="click_cb();"><label for="box_20" class="checkbox">ローバ</label></li>
+                <li><input type="checkbox" id="box_21" value="21" onclick="click_cb();"><label for="box_21" class="checkbox">ワットソン</label></li>
+                <li><input type="checkbox" id="box_22" value="22" onclick="click_cb();"><label for="box_22" class="checkbox">ヴァルキリー</label></li>
+                <li><input type="checkbox" id="box_23" value="23" onclick="click_cb();"><label for="box_23" class="checkbox">ヴァンテージ</label></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <%# 使用キャラクター %>
+
+        <%# プレイスタイル %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            プレイスタイル
+          </div>
+          <%= f.text_area :play_style, class:"play-style-text", id:"play-style", placeholder:"音の鳴る方へ" %>
+        </div>
+        <%# プレイスタイル %>
+
+        <%# プレイ時間帯 %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            プレイ時間帯
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :play_time, class:"play-time-text", id:"play-time", placeholder:"22時～24時" %>
+        </div>
+        <%# プレイ時間帯 %>
+
+        <%# 使用デバイス %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            プラットフォーム
+            <span class="indispensable">必須</span>
+          </div>
+          <form method="post" name="chk_ctl">
+            <div class="input-device">
+              <ul>
+                <li><input type="checkbox" id="box_1" value="1" onclick="click_cb();"><label for="box_1" class="checkbox">PC</label></li>
+                <li><input type="checkbox" id="box_2" value="2" onclick="click_cb();"><label for="box_2" class="checkbox">PS4/PS5</label></li>
+                <li><input type="checkbox" id="box_3" value="3" onclick="click_cb();"><label for="box_3" class="checkbox">Xbox</label></li>
+                <li><input type="checkbox" id="box_4" value="4" onclick="click_cb();"><label for="box_4" class="checkbox">Switch</label></li>
+                <li><input type="checkbox" id="box_5" value="5" onclick="click_cb();"><label for="box_5" class="checkbox">iOS</label></li>
+                <li><input type="checkbox" id="box_6" value="6" onclick="click_cb();"><label for="box_6" class="checkbox">Android</label></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <%# 使用デバイス %>
+
+        <%# コミュニケーションツール %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            コミュニケーションツール
+            <span class="indispensable">必須</span>
+          </div>
+          <form method="post" name="chk_ctl">
+            <div class="input-device">
+              <ul>
+                <li><input type="checkbox" id="box_1" value="1" onclick="click_cb();"><label for="box_1" class="checkbox">Discord</label></li>
+                <li><input type="checkbox" id="box_2" value="2" onclick="click_cb();"><label for="box_2" class="checkbox">Skype</label></li>
+                <li><input type="checkbox" id="box_3" value="3" onclick="click_cb();"><label for="box_3" class="checkbox">Line</label></li>
+                <li><input type="checkbox" id="box_4" value="4" onclick="click_cb();"><label for="box_4" class="checkbox">ゲーム内VC</label></li>
+                <li><input type="checkbox" id="box_5" value="5" onclick="click_cb();"><label for="box_5" class="checkbox">PS4/PS5</label></li>
+                <li><input type="checkbox" id="box_6" value="6" onclick="click_cb();"><label for="box_6" class="checkbox">Switch</label></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <%# コミュニケーションツール %>
+
+        <%# コーチング料金 %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            コーチング料金
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price", id:"price", placeholder:"3000" %>
+        </div>
+        <%# コーチング料金 %>
+
+        <%# コーチング回数 %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            コーチング回数
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :times_to_teach, class:"times-to-teach-text", id:"times-to-teach", placeholder:"3" %>
+          <span class="sell-yen">回</span>
+        </div>
+        <%# コーチング回数 %>
+
+        <%# 生徒のランク上限 %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            生徒のランク上限
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:rank_limit_id, RankLimit.all, :id, :name, {}, {class:"select-box", id:"rank-limit"}) %>
+        </div>
+        <%# 生徒のランク上限 %>
+
+        <%# アピールポイント %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            アピールポイント
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :appeal_point, class:"appeal-point-text", id:"appeal-point", placeholder:"感度についてみっちり教えます", maxlength:"100" %>
+        </div>
+        <%# アピールポイント %>
+
+        <div class="register-btn-contents">
+          <%= f.submit "登録する", class:"register-btn" %>
+          <%=link_to 'やめる', root_path, class:"back-btn" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <%= render "shared/footer" %>
+</div>
