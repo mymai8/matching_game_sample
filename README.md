@@ -1,107 +1,24 @@
-# アプリケーション名
-マッチングゲーム
+# README
 
-# アプリケーション概要
-APEXというFPSゲームを人に教えてあげたい人と教えてもらいたい人がマッチングできるアプリです。
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# URL
+Things you may want to cover:
 
+* Ruby version
 
-# テスト用アカウント
+* System dependencies
 
+* Configuration
 
-# 利用方法
-ユーザー登録をし、教えてあげたい人は自分の情報とともにコーチング回数や値段を設定して売りに出します。
-教えてもらいたい人は、ユーザー登録をしたうえで売られているコーチングから好きなものを選んで購入します。
-マッチングが成立すると、2人のルームが作成され、会話ができるようになります。
+* Database creation
 
-# アプリケーションを作成した背景
+* Database initialization
 
+* How to run the test suite
 
-# 洗い出した要件
+* Services (job queues, cache servers, search engines, etc.)
 
-# 実装した機能についての画像やGIFおよびその説明
+* Deployment instructions
 
-# 実装予定の機能
-
-# データベース設計
-
-# 画面遷移図
-
-# 開発環境
-
-# ローカルでの動作方法
-
-# 工夫したポイント
-
-
-
-
-
-## Users テーブル
-
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
-| game_name          | string  | null: false               |
-
-
-### Association
-has_one :coach
-
-
-
-## Coaches テーブル
-
-| Column             | Type       | Options                        |
-| -------------------| ---------- | ------------------------------ |
-| user               | references | null: false, foreign_key: true |
-| rank_id            | integer    | null: false                    |
-| kill_rate          | string     | null: false                    |
-| character          | text       | null: false                    |
-| play_style         | string     |                                |
-| play_time          | string     | null: false                    |
-| play_device        | text       | null: false                    |
-| communication_tool | text       | null: false                    |
-| price              | string     | null: false                    |
-| times_to_teach     | string     | null: false                    |
-| rank_limit_id      | integer    | null: false                    |
-| appeal_point       | text       | null: false                    |
-
-
-### Association
-belongs_to :user
-has_many :rooms
-
-
-## Payments テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| room               | references | null: false, foreign_key: true |
-| rank_id            | integer    | null: false                    |
-| character          | text       | null: false                    |
-| play_style         | string     |                                |
-| play_time          | string     | null: false                    |
-| communication_tool | text       | null: false                    |
-| goal               | text       | null: false                    |
-
-
-### Association
-has_one :room
-
-
-## Rooms テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| coach   | references | null: false, foreign_key: true |
-| payment | references | null: false, foreign_key: true |
-
-### Association
-belongs_to :user
-belongs_to :coach
-belongs_to :payment
+* ...

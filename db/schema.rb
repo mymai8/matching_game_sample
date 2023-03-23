@@ -10,25 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_21_034817) do
-
-  create_table "coaches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "rank_id", null: false
-    t.string "kill_rate", null: false
-    t.text "character", null: false
-    t.string "play_style"
-    t.string "play_time", null: false
-    t.text "play_device", null: false
-    t.text "communication_tool", null: false
-    t.string "price", null: false
-    t.string "times_to_teach", null: false
-    t.integer "rank_limit_id", null: false
-    t.text "appeal_point", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_coaches_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2023_03_20_105800) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -44,5 +26,4 @@ ActiveRecord::Schema.define(version: 2023_03_21_034817) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "coaches", "users"
 end
