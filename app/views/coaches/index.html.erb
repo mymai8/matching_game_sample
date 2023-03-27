@@ -10,9 +10,12 @@
             <%= link_to coach_path(coach) do %>
             <div class='coach-info'>
               <h3 class='coach-nickname'>
-                <%= coach.nickname %>
+                <%= coach.user_id %>
               </h3>
               <div class='coach-price'>
+                <span>コーチの最高ランク：<%= coach.rank_id %></span><br>
+                <span>生徒のランク上限：<%= coach.rank_limit_id %></span><br>
+                <span>アピールポイント：<%= coach.appeal_point %></span><br>
                 <span><%= coach.price %>円</span>
               </div>
             </div>

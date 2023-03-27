@@ -9,7 +9,7 @@ class CoachesController < ApplicationController
 
   def create
     @coach = Coach.new(coach_params)
-    binding.pry
+    #binding.pry
     if @coach.save
       redirect_to root_path
     else

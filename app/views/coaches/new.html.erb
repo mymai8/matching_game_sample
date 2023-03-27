@@ -36,40 +36,37 @@
             使用キャラクター
             <span class="indispensable">必須</span>
           </div>
-          <form method="post" name="chk_ctl">
-            <div class="input-character">
-              <ul>
-                <li><input type="checkbox" id="box_1" value="1" onclick="click_cb();"><label for="box_1" class="checkbox">アッシュ</label></li>
-                <li><input type="checkbox" id="box_2" value="2" onclick="click_cb();"><label for="box_2" class="checkbox">オクタン</label></li>
-                <li><input type="checkbox" id="box_3" value="3" onclick="click_cb();"><label for="box_3" class="checkbox">カタリスト</label></li>
-                <li><input type="checkbox" id="box_4" value="4" onclick="click_cb();"><label for="box_4" class="checkbox">クリプト</label></li>
-                <li><input type="checkbox" id="box_5" value="5" onclick="click_cb();"><label for="box_5" class="checkbox">コースティック</label></li>
-                <li><input type="checkbox" id="box_6" value="6" onclick="click_cb();"><label for="box_6" class="checkbox">シア</label></li>
-                <li><input type="checkbox" id="box_7" value="7" onclick="click_cb();"><label for="box_7" class="checkbox">ジブラルタル</label></li>
-                <li><input type="checkbox" id="box_8" value="8" onclick="click_cb();"><label for="box_8" class="checkbox">ニューキャッスル</label></li>
-                <li><input type="checkbox" id="box_9" value="9" onclick="click_cb();"><label for="box_9" class="checkbox">バンガロール</label></li>
-                <li><input type="checkbox" id="box_10" value="10" onclick="click_cb();"><label for="box_10" class="checkbox">パスファインダー</label></li>
-                <li><input type="checkbox" id="box_11" value="11" onclick="click_cb();"><label for="box_11" class="checkbox">ヒューズ</label></li>
-                <li><input type="checkbox" id="box_12" value="12" onclick="click_cb();"><label for="box_12" class="checkbox">ブラッドハウンド</label></li>
-                <li><input type="checkbox" id="box_13" value="13" onclick="click_cb();"><label for="box_13" class="checkbox">ホライゾン</label></li>
-                <li><input type="checkbox" id="box_14" value="14" onclick="click_cb();"><label for="box_14" class="checkbox">マッドマギー</label></li>
-                <li><input type="checkbox" id="box_15" value="15" onclick="click_cb();"><label for="box_15" class="checkbox">ミラージュ</label></li>
-                <li><input type="checkbox" id="box_16" value="16" onclick="click_cb();"><label for="box_16" class="checkbox">ライフライン</label></li>
-                <li><input type="checkbox" id="box_17" value="17" onclick="click_cb();"><label for="box_17" class="checkbox">ランパート</label></li>
-                <li><input type="checkbox" id="box_18" value="18" onclick="click_cb();"><label for="box_18" class="checkbox">レイス</label></li>
-                <li><input type="checkbox" id="box_19" value="19" onclick="click_cb();"><label for="box_19" class="checkbox">レヴナント</label></li>
-                <li><input type="checkbox" id="box_20" value="20" onclick="click_cb();"><label for="box_20" class="checkbox">ローバ</label></li>
-                <li><input type="checkbox" id="box_21" value="21" onclick="click_cb();"><label for="box_21" class="checkbox">ワットソン</label></li>
-                <li><input type="checkbox" id="box_22" value="22" onclick="click_cb();"><label for="box_22" class="checkbox">ヴァルキリー</label></li>
-                <li><input type="checkbox" id="box_23" value="23" onclick="click_cb();"><label for="box_23" class="checkbox">ヴァンテージ</label></li>
-              </ul>
-            </div>
-          </form>
+          <div class="select-character">
+            <% f.label :character %>
+              <%= f.check_box :character, {multiple: true}, "アッシュ", nil %>アッシュ<br>
+              <%= f.check_box :character, {multiple: true}, "オクタン", nil %>オクタン<br>
+              <%= f.check_box :character, {multiple: true}, "カタリスト", nil %>カタリスト<br>
+              <%= f.check_box :character, {multiple: true}, "クリプト", nil %>クリプト<br>
+              <%= f.check_box :character, {multiple: true}, "コースティック", nil %>コースティック<br>
+              <%= f.check_box :character, {multiple: true}, "シア", nil %>シア<br>
+              <%= f.check_box :character, {multiple: true}, "ジブラルタル", nil %>ジブラルタル<br>
+              <%= f.check_box :character, {multiple: true}, "ニューキャッスル", nil %>ニューキャッスル<br>
+              <%= f.check_box :character, {multiple: true}, "バンガロール", nil %>バンガロール<br>
+              <%= f.check_box :character, {multiple: true}, "パスファインダー", nil %>パスファインダー<br>
+              <%= f.check_box :character, {multiple: true}, "ヒューズ", nil %>ヒューズ<br>
+              <%= f.check_box :character, {multiple: true}, "ブラッドハウンド", nil %>ブラッドハウンド<br>
+              <%= f.check_box :character, {multiple: true}, "ホライゾン", nil %>ホライゾン<br>
+              <%= f.check_box :character, {multiple: true}, "マッドマギー", nil %>マッドマギー<br>
+              <%= f.check_box :character, {multiple: true}, "ミラージュ", nil %>ミラージュ<br>
+              <%= f.check_box :character, {multiple: true}, "ライフライン", nil %>ライフライン<br>
+              <%= f.check_box :character, {multiple: true}, "ランパート", nil %>ランパート<br>
+              <%= f.check_box :character, {multiple: true}, "レイス", nil %>レイス<br>
+              <%= f.check_box :character, {multiple: true}, "レヴナント", nil %>レヴナント<br>
+              <%= f.check_box :character, {multiple: true}, "ローバ", nil %>ローバ<br>
+              <%= f.check_box :character, {multiple: true}, "ワットソン", nil %>ワットソン<br>
+              <%= f.check_box :character, {multiple: true}, "ヴァルキリー", nil %>ヴァルキリー<br>
+              <%= f.check_box :character, {multiple: true}, "ヴァンテージ", nil %>ヴァンテージ<br>
+          </div>
         </div>
         <%# 使用キャラクター %>
 
         <%# プレイスタイル %>
-        <div class="coach-character">
+        <div class="play-style">
           <div class="weight-bold-text">
             プレイスタイル
           </div>
@@ -78,7 +75,7 @@
         <%# プレイスタイル %>
 
         <%# プレイ時間帯 %>
-        <div class="coach-character">
+        <div class="play-time">
           <div class="weight-bold-text">
             プレイ時間帯
             <span class="indispensable">必須</span>
@@ -88,44 +85,38 @@
         <%# プレイ時間帯 %>
 
         <%# 使用デバイス %>
-        <div class="coach-character">
+        <div class="play-device">
           <div class="weight-bold-text">
             プラットフォーム
             <span class="indispensable">必須</span>
           </div>
-          <form method="post" name="chk_ctl">
-            <div class="input-device">
-              <ul>
-                <li><input type="checkbox" id="box_1" value="1" onclick="click_cb();"><label for="box_1" class="checkbox">PC</label></li>
-                <li><input type="checkbox" id="box_2" value="2" onclick="click_cb();"><label for="box_2" class="checkbox">PS4/PS5</label></li>
-                <li><input type="checkbox" id="box_3" value="3" onclick="click_cb();"><label for="box_3" class="checkbox">Xbox</label></li>
-                <li><input type="checkbox" id="box_4" value="4" onclick="click_cb();"><label for="box_4" class="checkbox">Switch</label></li>
-                <li><input type="checkbox" id="box_5" value="5" onclick="click_cb();"><label for="box_5" class="checkbox">iOS</label></li>
-                <li><input type="checkbox" id="box_6" value="6" onclick="click_cb();"><label for="box_6" class="checkbox">Android</label></li>
-              </ul>
-            </div>
-          </form>
+          <div class="select-device">
+            <% f.label :play_device %>
+              <%= f.check_box :play_device, {multiple: true}, "PC", nil %>PC<br>
+              <%= f.check_box :play_device, {multiple: true}, "PS4/PS5", nil %>PS4/PS5<br>
+              <%= f.check_box :play_device, {multiple: true}, "Xbox", nil %>Xbox<br>
+              <%= f.check_box :play_device, {multiple: true}, "Switch", nil %>Switch<br>
+              <%= f.check_box :play_device, {multiple: true}, "iOS", nil %>iOS<br>
+              <%= f.check_box :play_device, {multiple: true}, "Android", nil %>Android<br>
+          </div>
         </div>
         <%# 使用デバイス %>
 
         <%# コミュニケーションツール %>
-        <div class="coach-character">
+        <div class="communication-tool">
           <div class="weight-bold-text">
             コミュニケーションツール
             <span class="indispensable">必須</span>
           </div>
-          <form method="post" name="chk_ctl">
-            <div class="input-device">
-              <ul>
-                <li><input type="checkbox" id="box_1" value="1" onclick="click_cb();"><label for="box_1" class="checkbox">Discord</label></li>
-                <li><input type="checkbox" id="box_2" value="2" onclick="click_cb();"><label for="box_2" class="checkbox">Skype</label></li>
-                <li><input type="checkbox" id="box_3" value="3" onclick="click_cb();"><label for="box_3" class="checkbox">Line</label></li>
-                <li><input type="checkbox" id="box_4" value="4" onclick="click_cb();"><label for="box_4" class="checkbox">ゲーム内VC</label></li>
-                <li><input type="checkbox" id="box_5" value="5" onclick="click_cb();"><label for="box_5" class="checkbox">PS4/PS5</label></li>
-                <li><input type="checkbox" id="box_6" value="6" onclick="click_cb();"><label for="box_6" class="checkbox">Switch</label></li>
-              </ul>
-            </div>
-          </form>
+          <div class="select-tool">
+            <% f.label :communication_tool %>
+              <%= f.check_box :communication_tool, {multiple: true}, "Discord", nil %>Discord<br>
+              <%= f.check_box :communication_tool, {multiple: true}, "Skype", nil %>Skype<br>
+              <%= f.check_box :communication_tool, {multiple: true}, "LINE", nil %>LINE<br>
+              <%= f.check_box :communication_tool, {multiple: true}, "OpenVC", nil %>OpenVC<br>
+              <%= f.check_box :communication_tool, {multiple: true}, "PS4/PS5", nil %>PS4/PS5<br>
+              <%= f.check_box :communication_tool, {multiple: true}, "Switch", nil %>Switch<br>
+          </div>
         </div>
         <%# コミュニケーションツール %>
 
@@ -172,7 +163,7 @@
         <%# アピールポイント %>
 
         <div class="register-btn-contents">
-          <%= f.submit "登録する", class:"register-btn" %>
+          <%= f.submit "登録する", method: :get, class:"register-btn" %>
           <%=link_to 'やめる', root_path, class:"back-btn" %>
         </div>
       </div>
