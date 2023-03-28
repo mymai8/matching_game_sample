@@ -120,17 +120,6 @@
         </div>
         <%# コミュニケーションツール %>
 
-        <%# コーチング料金 %>
-        <div class="coach-character">
-          <div class="weight-bold-text">
-            コーチング料金
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :price, class:"price", id:"price", placeholder:"3000" %>
-        </div>
-        <%# コーチング料金 %>
-
         <%# コーチング回数 %>
         <div class="coach-character">
           <div class="weight-bold-text">
@@ -141,6 +130,17 @@
           <span class="sell-yen">回</span>
         </div>
         <%# コーチング回数 %>
+
+        <%# コーチング料金 %>
+        <div class="coach-character">
+          <div class="weight-bold-text">
+            コーチング料金
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price", id:"price", placeholder:"3000" %>
+        </div>
+        <%# コーチング料金 %>
 
         <%# 生徒のランク上限 %>
         <div class="coach-character">

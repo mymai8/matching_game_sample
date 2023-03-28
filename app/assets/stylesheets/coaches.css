@@ -146,3 +146,33 @@
   text-decoration: none;
   color: black;
 }
+
+
+/* index */
+a {
+  text-decoration: none;
+}
+
+.coach-nickname {
+  color: black;
+  font-size: 24px;
+}
+
+.coaching-info {
+  color: black;
+  padding-left: 24px;
+}
+
+.coach-info {
+  padding: 25px;
+  border-radius: 4px;
+  border: 1px solid #ffaf80;
+  resize: none;
+  margin-bottom: 5vh;
+}
+
+/* show */
+.coaching-detail {
+  color: black;
+  padding-left: 24px;
+}
