@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :game_name, presence: true
+
+  has_many :coaches
 end

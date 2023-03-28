@@ -9,12 +9,15 @@ class CoachesController < ApplicationController
 
   def create
     @coach = Coach.new(coach_params)
-    binding.pry
     if @coach.save
       redirect_to root_path
     else
       render :new
     end
+  end
+
+  def show
+    @coach = Coach.find(params[:id])
   end
 
   private

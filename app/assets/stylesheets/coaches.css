@@ -47,7 +47,8 @@
 }
 
 /* キャラクター */
-.input-character {
+.select-character {
+  margin-left: 15px;
   margin-bottom: 5vh;
 }
 
@@ -76,12 +77,16 @@
 }
 
 /* プラットフォーム */
-.input-device {
+.select-device {
+  margin-left: 10px;
   margin-bottom: 5vh;
 }
 
 /* コミュニケーションツール */
-
+.select-tool {
+  margin-left: 10px;
+  margin-bottom: 5vh;
+}
 
 /* コーチング料金 */
 .price {
@@ -119,4 +124,55 @@
   font-size: 16px;
   resize: none;
   margin-bottom: 5vh;
+}
+
+/* 登録ボタン */
+.register-btn {
+  border: 1px solid #ffaf80;
+  background-color: #ffe7dc;
+  border-radius: 4px;
+  height: 30px;
+  width: 100px;
+  padding: 5px;
+}
+
+.back-btn {
+  border: 1px solid #a5a5a5;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  height: 30px;
+  width: 100px;
+  padding: 2px;
+  text-decoration: none;
+  color: black;
+}
+
+
+/* index */
+a {
+  text-decoration: none;
+}
+
+.coach-nickname {
+  color: black;
+  font-size: 24px;
+}
+
+.coaching-info {
+  color: black;
+  padding-left: 24px;
+}
+
+.coach-info {
+  padding: 25px;
+  border-radius: 4px;
+  border: 1px solid #ffaf80;
+  resize: none;
+  margin-bottom: 5vh;
+}
+
+/* show */
+.coaching-detail {
+  color: black;
+  padding-left: 24px;
 }
