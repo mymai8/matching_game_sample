@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_29_061846) do
+ActiveRecord::Schema.define(version: 2023_03_30_072032) do
 
   create_table "coaches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -41,15 +41,18 @@ ActiveRecord::Schema.define(version: 2023_03_29_061846) do
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "coach_id", null: false
+    t.bigint "order_id", null: false
     t.integer "rank_id", null: false
     t.text "character", null: false
     t.string "play_style"
     t.string "play_time", null: false
+    t.text "play_device", null: false
     t.text "communication_tool", null: false
     t.text "goal", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["coach_id"], name: "index_payments_on_coach_id"
+    t.index ["order_id"], name: "index_payments_on_order_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,4 +73,5 @@ ActiveRecord::Schema.define(version: 2023_03_29_061846) do
   add_foreign_key "orders", "coaches"
   add_foreign_key "orders", "users"
   add_foreign_key "payments", "coaches"
+  add_foreign_key "payments", "orders"
 end

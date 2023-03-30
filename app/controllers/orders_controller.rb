@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order_form).permit(:rank_id, :character, :play_time, :communication_tool, :goal).merge(user_id: current_user.id, coach_id: params[:coach_id], token: params[:token])
+    params.require(:order_form).permit(:rank_id, {:character => []}, :play_time, {:play_device => []}, {:communication_tool => []}, :goal).merge(user_id: current_user.id, coach_id: params[:coach_id], token: params[:token])
   end
 
   def match

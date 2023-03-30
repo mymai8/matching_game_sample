@@ -5,9 +5,10 @@
 APEXというFPSゲームを人に教えてあげたい人と教えてもらいたい人がマッチングできるアプリです。
 
 # URL
-
+https://matching-game-e9xk.onrender.com
 
 # テスト用アカウント
+
 
 
 # 利用方法
@@ -100,6 +101,7 @@ has_one :payment
 | character          | text       | null: false                    |
 | play_style         | string     |                                |
 | play_time          | string     | null: false                    |
+| play_device        | text       | null: false                    |
 | communication_tool | text       | null: false                    |
 | goal               | text       | null: false                    |
 
