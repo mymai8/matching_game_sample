@@ -1,14 +1,22 @@
 # アプリケーション名
-マッチングゲーム
+MatchingGame
+
 
 # アプリケーション概要
 APEXというFPSゲームを人に教えてあげたい人と教えてもらいたい人がマッチングできるアプリです。
 
+
 # URL
-https://matching-game-e9xk.onrender.com
+https://matching-game-2suz.onrender.com
+
 
 # テスト用アカウント
-
+Basic認証ID:admin
+Basic認証パスワード:2222
+出品者用メールアドレス:taro@com
+出品者用パスワード:123abc
+購入者用メールアドレス:hanako@com
+購入者用パスワード:abc123
 
 
 # 利用方法
@@ -16,110 +24,52 @@ https://matching-game-e9xk.onrender.com
 教えてもらいたい人は、ユーザー登録をしたうえで売られているコーチングから好きなものを選んで購入します。
 マッチングが成立すると、2人のルームが作成され、会話ができるようになります。
 
+
 # アプリケーションを作成した背景
 コーチングをしてもらいたいと思いつつもTwitterなどで探すのに苦労した経験から、コーチと生徒がマッチングするアプリケーションがあったら便利だと思い、制作しました。
 
+
 # 洗い出した要件
+https://docs.google.com/spreadsheets/d/1hRrlotkTldTG1a4uX_kbTlvfCY65I3BCOmA9qaxV4Gg/edit?usp=sharing
+
 
 # 実装した機能についての画像やGIFおよびその説明
+コーチとしての登録は、右上の「コーチ登録」を押し、必要情報を入力して「登録する」ボタンを押します。
+[![Image from Gyazo](https://i.gyazo.com/c5f39ecbec5992cb797c4bbf7b63c219.gif)](https://gyazo.com/c5f39ecbec5992cb797c4bbf7b63c219)
+
+コーチングの受講を希望する場合は、トップ画面に並んでいるコーチング情報の中から受けたいものをクリックし、必要情報を入力して「購入」ボタンを押します
+[![Image from Gyazo](https://i.gyazo.com/9f171b39f285cbada2c1a831f8abebbd.gif)](https://gyazo.com/9f171b39f285cbada2c1a831f8abebbd)
+
 
 # 実装予定の機能
+購入後、購入したことがわかるよう出品者と購入者だけのルームを実装予定です。
+また、購入前に出品者に確認したいことがある場合にコメントできるよう、コメント機能を実装予定です。
 
 # データベース設計
+[![Image from Gyazo](https://i.gyazo.com/47377ff139815794a87290410f6038b8.png)](https://gyazo.com/47377ff139815794a87290410f6038b8)
+
 
 # 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/57d53684ba316f95c1d3042134a0f65e.png)](https://gyazo.com/57d53684ba316f95c1d3042134a0f65e)
+
 
 # 開発環境
+* フロントエンド
+* バックエンド
+* インフラ
+* テスト
+* テキストエディタ
+
 
 # ローカルでの動作方法
+以下のコマンドを順に実行してください。
+% git clone https://github.com/mymai8/matching_game.git
+% cd matching_game
+% bundle install
+% yarn install
+
 
 # 工夫したポイント
-
-
-
-
-
-## Users テーブル
-
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
-| game_name          | string  | null: false               |
-
-
-### Association
-has_many :coaches
-has_many :orders
-has_many :rooms
-
-
-
-## Coaches テーブル
-
-| Column             | Type       | Options                        |
-| -------------------| ---------- | ------------------------------ |
-| user               | references | null: false, foreign_key: true |
-| rank_id            | integer    | null: false                    |
-| kill_rate          | string     | null: false                    |
-| character          | text       | null: false                    |
-| play_style         | string     |                                |
-| play_time          | string     | null: false                    |
-| play_device        | text       | null: false                    |
-| communication_tool | text       | null: false                    |
-| price              | string     | null: false                    |
-| times_to_teach     | string     | null: false                    |
-| rank_limit_id      | integer    | null: false                    |
-| appeal_point       | text       | null: false                    |
-
-
-### Association
-belongs_to :user
-has_many :rooms
-
-
-## Orders テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| coach  | references | null: false, foreign_key: true |
-
-### Association
-belongs_to :user
-belongs_to :coach
-has_one :payment
-
-
-## Payments テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| coach              | references | null: false, foreign_key: true |
-| rank_id            | integer    | null: false                    |
-| character          | text       | null: false                    |
-| play_style         | string     |                                |
-| play_time          | string     | null: false                    |
-| play_device        | text       | null: false                    |
-| communication_tool | text       | null: false                    |
-| goal               | text       | null: false                    |
-
-
-### Association
-belongs_to :order
-has_one :room
-
-
-## Rooms テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| coach   | references | null: false, foreign_key: true |
-| payment | references | null: false, foreign_key: true |
-
-### Association
-belongs_to :user
-belongs_to :coach
-belongs_to :payment
+使用キャラクターやプラットフォーム、コミュニケーションツールは複数選択が予想されるため、text型にしてチェックボックスとしてデータを保存するよう工夫しました。
+カリキュラムでは扱っていない内容でしたので、webで検索しながら実装しました。
+まだまだビューが整っていない部分はありますが、私自身の「こんなアプリがあったらいいな」という思いを形にすることができました。
