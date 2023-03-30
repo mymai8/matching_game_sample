@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
+    if @user.update(user_params)
+      redirect_to user_path(useparams)
+    else
+      render :edit
+    end
   end
 
   private

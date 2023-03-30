@@ -25,15 +25,15 @@
       </div>
       
       <% if current_user == @coach.user %>
-        <% unless @coach.order.present? %>
-          <%= link_to "商品の編集", edit_coach_path(@coach), method: :get, class: "coach-red-btn" %>
+        <%# unless @coach.order.present? %>
+          <%= link_to "コーチ情報の編集", edit_coach_path(@coach), method: :get, class: "coach-red-btn" %>
           <p class="or-text">or</p>
           <%= link_to "削除", "#", method: :delete, class:"coach-destroy" %>
-        <% end %>
+        <%# end %>
       <% elsif user_signed_in? %>
-        <% unless @coach.order.present? %>
+        <%# unless @coach.order.present? %>
         <%= link_to "購入画面に進む", coach_orders_path(@coach), method: :get, class:"coach-red-btn"%>
-        <% end %>
+        <%# end %>
       <% end %>
     </div>
   <%= render "shared/footer" %>
