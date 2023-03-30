@@ -49,7 +49,9 @@ APEXというFPSゲームを人に教えてあげたい人と教えてもらい�
 
 
 ### Association
-has_one :coach
+has_many :coaches
+has_many :orders
+has_many :rooms
 
 
 
@@ -76,11 +78,24 @@ belongs_to :user
 has_many :rooms
 
 
+## Orders テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| coach  | references | null: false, foreign_key: true |
+
+### Association
+belongs_to :user
+belongs_to :coach
+has_one :payment
+
+
 ## Payments テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| room               | references | null: false, foreign_key: true |
+| coach              | references | null: false, foreign_key: true |
 | rank_id            | integer    | null: false                    |
 | character          | text       | null: false                    |
 | play_style         | string     |                                |
@@ -90,6 +105,7 @@ has_many :rooms
 
 
 ### Association
+belongs_to :order
 has_one :room
 
 
