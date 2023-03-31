@@ -1,6 +1,10 @@
-<div class="contents row">
-  <div class="container">
-    <h2>Sign up</h2>
+<div class="wrapper">
+  <%= render "shared/header" %>
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+    <div class="main">
+      <h2>Sign up</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -36,5 +40,6 @@
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
-  </div>
+    </div>
+  <%= render "shared/footer" %>
 </div>
