@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_30_072032) do
+ActiveRecord::Schema.define(version: 2023_04_14_060140) do
 
   create_table "coaches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 2023_03_30_072032) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["coach_id"], name: "index_payments_on_coach_id"
     t.index ["order_id"], name: "index_payments_on_order_id"
+  end
+
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "coach_id", null: false
+    t.bigint "payment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coach_id"], name: "index_rooms_on_coach_id"
+    t.index ["payment_id"], name: "index_rooms_on_payment_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
